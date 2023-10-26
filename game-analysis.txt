@@ -1,0 +1,9 @@
+r r/p p/s s - draw
+user	com	u-score	c-score
+ r	 p	0	1
+ r	 s	1	0
+ p	 r	1	0
+ p	 s	0	1
+ s	 r	0	1
+ s	 p	1	0
+ 

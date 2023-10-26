@@ -1,0 +1,63 @@
+# code for the game
+from tkinter import *
+import random
+def start():
+    comscore = 0
+    userscore =0 
+    r = "rock"
+    p = "paper"
+    s = "scissor"
+    val = random.randint(0,2)
+    collect =["rock","paper","scissor"]
+    user = ent1.get()
+    com = collect[val]
+    ans.config(text=com)
+    if(com == ans):
+        x=0
+    elif(user == r and com == p):
+        comscore +=1
+        print(comscore,userscore)
+    elif(user == r and com == s):
+        userscore +=1
+        print(comscore,userscore)
+    elif(user == p and com == r):
+        userscore+=1
+        print(comscore,userscore)
+    elif(user == p and com == s):
+        comscore +=1
+        print(comscore,userscore)
+    elif(user == s and com == r):
+        comscore+=1
+        print(comscore,userscore)
+    elif(user == s and com == p):
+        usercore+=1
+        print(comscore,userscore)
+    else:
+        print()
+    if(comscore ==3 or userscore == 3):
+        if(comscore==3):
+            final.config(text="computer won")
+            root.destroy()
+        elif(userscore == 3):
+            final.config(text = "YOU Won")
+            root.destroy()
+        else:
+            pass
+    print("user score is",userscore,"computer score",comscore)
+  
+root = Tk()
+root.geometry("400x400")
+title = Label(root,text="ROCK PAPER SCISSOR",bg="green",fg="white",font=('Times New Roman',15))
+lab1 = Label(root,text = "Enter your choice")
+ent1 = Entry(root)
+lab2 = Label(root,text = "computer choice")
+ans = Label(root,text ="")
+final = Label(root,text="")
+submit = Button(root,text ="SUBMIT",command=start)
+title.pack()
+lab1.pack()
+ent1.pack()
+lab2.pack()
+ans.pack()
+final.pack()
+submit.pack()
